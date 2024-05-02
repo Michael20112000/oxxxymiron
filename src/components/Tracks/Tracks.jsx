@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {Section} from '../Section/Section'
 import {SectionTitle} from '../Title/Title'
-import ScrollAnimation from 'react-animate-on-scroll'
+import {AnimationOnScroll} from 'react-animation-on-scroll'
 import {Icon} from '../Icon/Icon'
 import {getLocaleDateString} from '../../utils/common'
 import {Link} from 'react-router-dom'
@@ -38,7 +38,7 @@ export const Tracks = () => {
               items.map(track => {
                 const {cover, title, date, sys: {id}} = track
 
-                return <ScrollAnimation key={id}
+                return <AnimationOnScroll key={id}
                                         className="track-item"
                                         animateIn="fadeInLeft"
                                         animateOut="fadeOutRight">
@@ -56,7 +56,7 @@ export const Tracks = () => {
                       {title}
                     </h3>
                   </div>
-                </ScrollAnimation>
+                </AnimationOnScroll>
               })
             }
           </div>

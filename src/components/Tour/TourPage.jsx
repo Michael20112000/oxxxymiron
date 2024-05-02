@@ -1,14 +1,14 @@
 import {useTourItems} from '../../hooks/useTourItems'
 import {PageTitle} from '../Title/PageTitle'
 import {Loader} from '../Loader/Loader'
-import {useCallback, useEffect, useState} from 'react'
+import {useCallback, useEffect, useMemo, useState} from 'react'
 import {TourItem} from './TourItem'
 
 export const TourPage = () => {
   const {items = [], isLoading} = useTourItems()
   const [activeTab, setActiveTab] = useState(null)
   const [filtered, setFiltered] = useState([])
-  const tabs = [...new Set(items.map(({country}) => country))]
+  const tabs = useMemo(() => [...new Set(items.map(({country}) => country))], [items])
 
   const toggleTab = useCallback((tab) => {
     setActiveTab(tab)

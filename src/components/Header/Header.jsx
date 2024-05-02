@@ -1,6 +1,6 @@
 import {Logo} from '../Logo/Logo'
 import {MENU} from '../../utils/constants'
-import ScrollAnimation from 'react-animate-on-scroll'
+import {AnimationOnScroll} from 'react-animation-on-scroll'
 import {NavLink} from 'react-router-dom'
 import {Socials} from '../Socials/Socials'
 import {Hamburger} from './Hamburger'
@@ -12,7 +12,7 @@ export const Header = () => {
         <Logo/>
         <nav className="menu">
           {MENU.map(({link, name}, index) =>
-            <ScrollAnimation key={link}
+            <AnimationOnScroll key={link}
                              className="menu-item"
                              animateIn="fadeInDown"
                              delay={index * 100}
@@ -21,7 +21,7 @@ export const Header = () => {
                        to={`/${link}`}>
                 {name}
               </NavLink>
-            </ScrollAnimation>)}
+            </AnimationOnScroll>)}
         </nav>
         <Socials/>
         <Hamburger/>

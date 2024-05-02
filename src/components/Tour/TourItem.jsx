@@ -1,4 +1,4 @@
-import ScrollAnimation from 'react-animate-on-scroll'
+import {AnimationOnScroll} from 'react-animation-on-scroll'
 import {Icon} from '../Icon/Icon'
 import {getLocaleDateString} from '../../utils/common'
 
@@ -15,7 +15,7 @@ export const TourItem = (
   }
 ) => {
   return <li>
-    <ScrollAnimation className="tour-item"
+    <AnimationOnScroll className="tour-item"
                      animateIn="fadeInLeft"
                      animateOut="fadeOutRight"
                      delay={i * 100}
@@ -49,6 +49,6 @@ export const TourItem = (
           </button>
         )
       }
-    </ScrollAnimation>
+    </AnimationOnScroll>
   </li>
 }

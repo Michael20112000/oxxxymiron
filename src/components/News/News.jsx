@@ -4,7 +4,7 @@ import {SectionTitle} from '../Title/Title'
 import 'swiper/css'
 import {Navigation} from 'swiper/modules'
 import {SwiperSlide, Swiper} from 'swiper/react'
-import ScrollAnimation from 'react-animate-on-scroll'
+import {AnimationOnScroll} from 'react-animation-on-scroll'
 import {Link} from 'react-router-dom'
 import {Icon} from '../Icon/Icon'
 import {SLIDER_BUTTON_TYPES} from '../../utils/constants'
@@ -49,7 +49,7 @@ export const News = () => {
             {
               items.map(({title, sys: {id}, cover: {url}}, i) => (
                 <SwiperSlide key={id}>
-                  <ScrollAnimation
+                  <AnimationOnScroll
                     animateIn="fadeInLeft"
                     animateOut="fadeOutLeft"
                     delay={i * 100}>
@@ -61,7 +61,7 @@ export const News = () => {
                         {title}
                       </h3>
                     </Link>
-                  </ScrollAnimation>
+                  </AnimationOnScroll>
                 </SwiperSlide>
               ))
             }
